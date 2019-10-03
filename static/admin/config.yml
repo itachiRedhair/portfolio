@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: itachiRedhair/portfolio
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: whatIKnow
+    label: What I Know?
+    folder: whatIKnow
+    create: true
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: name, label: Name }
+      - { name: proficiency, label: Proficiency }
+      - { name: "thumbnail", label: "Image", widget: "image" }
