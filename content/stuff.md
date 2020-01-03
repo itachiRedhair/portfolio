@@ -1,7 +1,0 @@
----
-stuffIKnow:
-  - Javascript
-stuffIAmLearning:
-  - Golang
----
-
