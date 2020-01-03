@@ -34,7 +34,7 @@ collections:
       - label: "Experiments"
         name: "experiments"
         file: "content/experiments.md"
-        field:
+        fields:
           - label: "Experiments"
             name: experiments
             widget: "list"
@@ -45,7 +45,7 @@ collections:
       - label: "Writings"
         name: "writings"
         file: "content/writings.md"
-        field:
+        fields:
           - label: "Writings"
             name: writings
             widget: "list"
