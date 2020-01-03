@@ -6,9 +6,11 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: stuffIKnow
-    label: Stuff I Know
-    folder: stuffIKnow
-    create: true
-    fields:
-      - { name: "name", label: "Stuff Name" }
+  - label: "Main Content"
+    name: "mainContent"
+    files:
+      - label: "Stuff I Know"
+        name: "stuffIKnow"
+        file: "content/stuffIKnow.md"
+        fields:
+          - { label: Title, name: title }
