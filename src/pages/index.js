@@ -33,10 +33,7 @@ const anchors = [
 const IndexPage = ({ data }) => {
   const [currentAnchorIndex, setCurrentAnchorIndex] = useState(0)
 
-  const {
-    name,
-    description,
-  } = data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  console.log(data)
 
   useEffect(() => {
     window.onscroll = () => {
@@ -57,8 +54,6 @@ const IndexPage = ({ data }) => {
     nextPageNode.scrollIntoView({ behavior: "smooth" })
     setCurrentAnchorIndex(currentAnchorIndex + 1)
   }
-
-  console.log(data)
 
   return (
     <>
