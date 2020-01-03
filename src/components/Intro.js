@@ -9,11 +9,11 @@ const BriefIntro = styled.div`
   font-size: 2em;
 `
 
-export default () => {
+export default ({ name, description }) => {
   return (
     <div>
-      <Name>Akshay M</Name>
-      <BriefIntro>Hello there. I create stuff with the help of computers, mostly for web, mobile and cloud.</BriefIntro>
+      <Name>{name}</Name>
+      <BriefIntro>{description}</BriefIntro>
     </div>
   )
 }

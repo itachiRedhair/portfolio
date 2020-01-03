@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"
@@ -32,6 +33,11 @@ const anchors = [
 const IndexPage = ({ data }) => {
   const [currentAnchorIndex, setCurrentAnchorIndex] = useState(0)
 
+  const {
+    name,
+    description,
+  } = data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+
   useEffect(() => {
     window.onscroll = () => {
       anchors.forEach((_anchor, _idx) => {
@@ -59,7 +65,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Layout>
         <Page anchors={anchors} anchorIndex={0}>
-          <Intro />
+          <Intro name={name} description={description} />
         </Page>
         <Page anchors={anchors} anchorIndex={1}>
           <Work />
@@ -89,3 +95,20 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    allFile {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              name
+              description
+            }
+          }
+        }
+      }
+    }
+  }
+`
