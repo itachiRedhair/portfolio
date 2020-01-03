@@ -55,157 +55,31 @@ const StuffText = styled.p`
   color: white;
 `
 
-export default () => {
+export default ({ stuffIKnowList, stuffIAmLearningList }) => {
   return (
     <StuffIKnow>
       <div>
         <Heading>Stuff I am good at</Heading>
         <StuffContainer>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>Javascript</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>HTML</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>ANGULAR</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>REACT</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>Javascript</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>HTML</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>ANGULAR</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
+          {stuffIKnowList.map(stuff => (
+            <StuffItem>
+              <StuffBox>
+                <StuffText>{stuff}</StuffText>
+              </StuffBox>
+            </StuffItem>
+          ))}
         </StuffContainer>
       </div>
       <div>
         <Heading>Stuff I am learning</Heading>
         <StuffContainer>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>Javascript</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>HTML</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>ANGULAR</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>REACT</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>Javascript</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>HTML</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>ANGULAR</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>GO</StuffText>
-            </StuffBox>
-          </StuffItem>
-          <StuffItem>
-            <StuffBox learning>
-              <StuffText>CSS</StuffText>
-            </StuffBox>
-          </StuffItem>
+          {stuffIAmLearningList.map(stuff => (
+            <StuffItem>
+              <StuffBox learning>
+                <StuffText>{stuff}</StuffText>
+              </StuffBox>
+            </StuffItem>
+          ))}
         </StuffContainer>
       </div>
     </StuffIKnow>

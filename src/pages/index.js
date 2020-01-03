@@ -33,7 +33,11 @@ const anchors = [
 const IndexPage = ({ data }) => {
   const [currentAnchorIndex, setCurrentAnchorIndex] = useState(0)
 
-  console.log(data)
+  const {
+    name,
+    description,
+    image,
+  } = data.allFile.edges[0].node.childMarkdownRemark.frontmatter
 
   useEffect(() => {
     window.onscroll = () => {
@@ -60,19 +64,22 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Layout>
         <Page anchors={anchors} anchorIndex={0}>
-          <Intro name={"Akshay M"} description={"Work Desc"} />
+          <Intro name={name} description={description} image={image} />
         </Page>
         <Page anchors={anchors} anchorIndex={1}>
-          <Work />
+          <Work workDesc={"Work desc"} />
         </Page>
         <Page anchors={anchors} anchorIndex={2}>
-          <StuffIKnow />
+          <StuffIKnow
+            stuffIKnowList={["Javascript"]}
+            stuffIAmLearningList={["Golang"]}
+          />
         </Page>
         <Page anchors={anchors} anchorIndex={3}>
-          <Experiments />
+          <Experiments experimentsList={[]} />
         </Page>
         <Page anchors={anchors} anchorIndex={4}>
-          <Writings />
+          <Writings writingsList={[]} />
         </Page>
         <Page anchors={anchors} anchorIndex={5}>
           <GetInTouch />
@@ -93,13 +100,14 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allFile {
+    allFile(filter: { name: { eq: "name-and-description" } }) {
       edges {
         node {
           childMarkdownRemark {
             frontmatter {
               name
               description
+              image
             }
           }
         }

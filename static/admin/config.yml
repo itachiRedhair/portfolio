@@ -12,8 +12,43 @@ collections:
       - label: "Name and Description"
         name: "nameNDesc"
         file: "content/name-and-description.md"
-        identifier_field: name
         fields:
           - { label: Name, name: name }
           - { label: Description, name: description }
-          - {label: Image, name: image, widget: image}
+          - { label: Image, name: image, widget: image }
+      - label: "Work"
+        name: "Work"
+        file: "content/work.md"
+        fields:
+          - { label: Work, name: work }
+      - label: "Stuff"
+        name: "stuff"
+        file: "content/stuff.md"
+        fields:
+          - { label: "Stuff I Know", name: stuffIKnow, widget: "list" }
+          - {
+              label: "Stuff I Am Learning",
+              name: stuffIAmLearning,
+              widget: "list",
+            }
+      - label: "Experiments"
+        name: "experiments"
+        file: "content/experiments.md"
+        field:
+          - label: "Experiments"
+            name: experiments
+            widget: "list"
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Link, name: link, widget: string }
+              - { label: Description, name: description, widget: string }
+      - label: "Writings"
+        name: "writings"
+        file: "content/writings.md"
+        field:
+          - label: "Writings"
+            name: writings
+            widget: "list"
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Link, name: link, widget: string }
