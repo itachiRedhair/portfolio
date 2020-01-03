@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <Layout>
         <Page anchors={anchors} anchorIndex={0}>
-          <Intro name={name} description={description} />
+          <Intro name={"Akshay M"} description={"Work Desc"} />
         </Page>
         <Page anchors={anchors} anchorIndex={1}>
           <Work />
