@@ -30,7 +30,7 @@ const anchors = [
   "get-in-touch",
 ]
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   const [currentAnchorIndex, setCurrentAnchorIndex] = useState(0)
 
   useEffect(() => {
@@ -52,6 +52,8 @@ const IndexPage = () => {
     nextPageNode.scrollIntoView({ behavior: "smooth" })
     setCurrentAnchorIndex(currentAnchorIndex + 1)
   }
+
+  console.log(data)
 
   return (
     <>
@@ -88,3 +90,5 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql``
