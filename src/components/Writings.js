@@ -14,8 +14,8 @@ export default ({ writingsList }) => {
     <div>
       <Heading>Writings</Heading>
       <ul>
-        {writingsList.map(({ link, heading }) => (
-          <li>
+        {writingsList.map(({ link, heading }, idx) => (
+          <li key={idx}>
             <WritingHeading>
               <a href={link}>{heading}</a>
             </WritingHeading>

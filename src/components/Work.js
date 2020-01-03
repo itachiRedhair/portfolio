@@ -13,9 +13,7 @@ export default ({ workDesc }) => {
   return (
     <div>
       <Heading>Work</Heading>
-      <BriefIntro>{workDesc}</BriefIntro>
+      <BriefIntro dangerouslySetInnerHTML={{ __html: workDesc }}></BriefIntro>
     </div>
   )
 }
-
-

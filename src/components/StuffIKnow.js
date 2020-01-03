@@ -61,10 +61,10 @@ export default ({ stuffIKnowList, stuffIAmLearningList }) => {
       <div>
         <Heading>Stuff I am good at</Heading>
         <StuffContainer>
-          {stuffIKnowList.map(stuff => (
-            <StuffItem>
+          {stuffIKnowList.map(({ name }, idx) => (
+            <StuffItem key={idx}>
               <StuffBox>
-                <StuffText>{stuff}</StuffText>
+                <StuffText>{name}</StuffText>
               </StuffBox>
             </StuffItem>
           ))}
@@ -73,10 +73,10 @@ export default ({ stuffIKnowList, stuffIAmLearningList }) => {
       <div>
         <Heading>Stuff I am learning</Heading>
         <StuffContainer>
-          {stuffIAmLearningList.map(stuff => (
-            <StuffItem>
+          {stuffIAmLearningList.map(({ name }, idx) => (
+            <StuffItem key={idx}>
               <StuffBox learning>
-                <StuffText>{stuff}</StuffText>
+                <StuffText>{name}</StuffText>
               </StuffBox>
             </StuffItem>
           ))}

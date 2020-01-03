@@ -33,11 +33,55 @@ const anchors = [
 const IndexPage = ({ data }) => {
   const [currentAnchorIndex, setCurrentAnchorIndex] = useState(0)
 
-  const {
-    name,
-    description,
-    image,
-  } = data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  const [description, setDescription] = useState(null)
+  const [name, setName] = useState(null)
+  const [image, setImage] = useState(null)
+  const [experiments, setExperiments] = useState(null)
+  const [stuffIAmLearning, setStuffIAmLearning] = useState(null)
+  const [stuffIKnow, setStuffIKnow] = useState(null)
+  const [work, setWork] = useState(null)
+  const [writings, setWritings] = useState(null)
+
+  useEffect(() => {
+    const allNodes = data.allMarkdownRemark.nodes
+    let _name,
+      _image,
+      _desc,
+      _expts,
+      _stuffKnow,
+      _stuffLearning,
+      _work,
+      _writings
+
+    allNodes.forEach(aNode => {
+      _name = aNode.frontmatter["name"] ? aNode.frontmatter["name"] : _name
+      _image = aNode.frontmatter["image"] ? aNode.frontmatter["image"] : _image
+      _desc = aNode.frontmatter["description"]
+        ? aNode.frontmatter["description"]
+        : _desc
+      _expts = aNode.frontmatter["experiments"]
+        ? aNode.frontmatter["experiments"]
+        : _expts
+      _stuffKnow = aNode.frontmatter["stuffIAmLearning"]
+        ? aNode.frontmatter["stuffIAmLearning"]
+        : _stuffKnow
+      _stuffLearning = aNode.frontmatter["stuffIKnow"]
+        ? aNode.frontmatter["stuffIKnow"]
+        : _stuffLearning
+      _work = aNode.frontmatter["work"] ? aNode.frontmatter["work"] : _work
+      _writings = aNode.frontmatter["writings"]
+        ? aNode.frontmatter["writings"]
+        : _writings
+    })
+    setName(_name)
+    setImage(_image)
+    setDescription(_desc)
+    setWork(_work)
+    setExperiments(_expts)
+    setStuffIAmLearning(_stuffLearning)
+    setStuffIKnow(_stuffKnow)
+    setWritings(_writings)
+  }, data)
 
   useEffect(() => {
     window.onscroll = () => {
@@ -67,19 +111,19 @@ const IndexPage = ({ data }) => {
           <Intro name={name} description={description} image={image} />
         </Page>
         <Page anchors={anchors} anchorIndex={1}>
-          <Work workDesc={"Work desc"} />
+          <Work workDesc={work} />
         </Page>
         <Page anchors={anchors} anchorIndex={2}>
           <StuffIKnow
-            stuffIKnowList={["Javascript"]}
-            stuffIAmLearningList={["Golang"]}
+            stuffIKnowList={stuffIKnow || []}
+            stuffIAmLearningList={stuffIAmLearning || []}
           />
         </Page>
         <Page anchors={anchors} anchorIndex={3}>
-          <Experiments experimentsList={[]} />
+          <Experiments experimentsList={experiments || []} />
         </Page>
         <Page anchors={anchors} anchorIndex={4}>
-          <Writings writingsList={[]} />
+          <Writings writingsList={writings || []} />
         </Page>
         <Page anchors={anchors} anchorIndex={5}>
           <GetInTouch />
@@ -100,15 +144,27 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allFile(filter: { name: { eq: "name-and-description" } }) {
-      edges {
-        node {
-          childMarkdownRemark {
-            frontmatter {
-              name
-              description
-              image
-            }
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          description
+          experiments {
+            description
+            heading
+            link
+          }
+          image
+          name
+          stuffIAmLearning {
+            name
+          }
+          stuffIKnow {
+            name
+          }
+          work
+          writings {
+            link
+            heading
           }
         }
       }
