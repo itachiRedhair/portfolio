@@ -25,12 +25,16 @@ collections:
         name: "stuff"
         file: "content/stuff.md"
         fields:
-          - { label: "Stuff I Know", name: stuffIKnow, widget: "list" }
-          - {
-              label: "Stuff I Am Learning",
-              name: stuffIAmLearning,
-              widget: "list",
-            }
+          - label: "Stuff I Know"
+            name: stuffIKnow
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+          - label: "Stuff I Am Learning"
+            name: stuffIAmLearning
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
       - label: "Experiments"
         name: "experiments"
         file: "content/experiments.md"
