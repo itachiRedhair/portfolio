@@ -10,9 +10,10 @@ collections:
     name: "mainContent"
     files:
       - label: "Name and Description"
-        name: "name"
+        name: "nameNDesc"
         file: "content/name-and-description.md"
         identifier_field: name
         fields:
           - { label: Name, name: name }
           - { label: Description, name: description }
+          - {label: Image, name: image, widget: image}
