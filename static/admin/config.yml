@@ -9,8 +9,10 @@ collections:
   - label: "Main Content"
     name: "mainContent"
     files:
-      - label: "Stuff I Know"
-        name: "stuffIKnow"
-        file: "content/stuffIKnow.md"
+      - label: "Name and Description"
+        name: "name"
+        file: "content/name-and-description.md"
+        identifier_field: name
         fields:
-          - { label: Title, name: title }
+          - { label: Name, name: name }
+          - { label: Description, name: description }
