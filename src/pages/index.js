@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"
@@ -90,5 +89,3 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
-export const query = graphql``
