@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"

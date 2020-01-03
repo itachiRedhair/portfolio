@@ -6,12 +6,9 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: whatIKnow
-    label: What I Know?
-    folder: whatIKnow
+  - name: stuffIKnow
+    label: Stuff I Know
+    folder: stuffIKnow
     create: true
     fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: name, label: Name }
-      - { name: proficiency, label: Proficiency }
-      - { name: "thumbnail", label: "Image", widget: "image" }
+      - { name: "name", label: "Stuff Name" }
