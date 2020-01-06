@@ -9,7 +9,8 @@ const StuffIKnow = styled.div`
 `
 
 const Heading = styled.div`
-  font-size: 3em;
+  font-size: 2rem;
+  line-height: 2.5rem;
 `
 
 const StuffContainer = styled.ul`

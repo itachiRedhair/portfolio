@@ -2,11 +2,13 @@ import React from "react"
 import styled from "@emotion/styled"
 
 const Name = styled.div`
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 3.5rem;
 `
 
 const BriefIntro = styled.div`
-  font-size: 2em;
+  font-size: 2rem;
+  line-height: 2.5rem;
 `
 
 const Container = styled.div`

@@ -1,8 +1,13 @@
 import React, { useState } from "react"
 import styled from "@emotion/styled"
+import twitterIconImg from "../images/twitter-icon.png"
+import githubIconImg from "../images/github-icon.png"
+import mediumIconImg from "../images/medium-icon.png"
+import linkedinIconImg from "../images/linkedin-icon.png"
 
 const Heading = styled.div`
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 3.5rem;
 `
 
 const Label = styled.label`
@@ -67,6 +72,24 @@ const SubmitButtonText = styled.span`
 
 const ErrorText = styled.span`
   color: tomato;
+`
+
+const ContactPlatformContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-top: 3em;
+`
+
+const PlatfomrImgLink = styled.a`
+  display: inline-block;
+  background-image: none;
+`
+
+const PlatformImg = styled.img`
+  height: 2em;
+  margin-bottom: 0;
 `
 
 export default () => {
@@ -151,6 +174,20 @@ export default () => {
           <ErrorText>{error}</ErrorText>
         </SubmitButton>
       </form>
+      <ContactPlatformContainer>
+        <PlatfomrImgLink href="https://twitter.com/_akshay_milmile" target="_blank">
+          <PlatformImg src={twitterIconImg} alt="twitter" />
+        </PlatfomrImgLink>
+        <PlatfomrImgLink href="https://medium.com/@akshay.milmile" target="_blank">
+          <PlatformImg src={mediumIconImg} alt="medium" />
+        </PlatfomrImgLink>
+        <PlatfomrImgLink href="https://github.com/itachiredhair" target="_blank">
+          <PlatformImg src={githubIconImg} alt="github" />
+        </PlatfomrImgLink>
+        <PlatfomrImgLink href="https://www.linkedin.com/in/akshaymilmile/" target="_blank">
+          <PlatformImg src={linkedinIconImg} alt="linkedin" />
+        </PlatfomrImgLink>
+      </ContactPlatformContainer>
     </div>
   )
 }

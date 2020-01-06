@@ -2,11 +2,13 @@ import React from "react"
 import styled from "@emotion/styled"
 
 const Heading = styled.div`
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 3.5rem;
 `
 
 const WritingHeading = styled.div`
-  font-size: 1.5em;
+  font-size: 1rem;
+  line-height: 1.5rem;
 `
 
 export default ({ writingsList }) => {

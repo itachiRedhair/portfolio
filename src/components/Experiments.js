@@ -2,15 +2,18 @@ import React from "react"
 import styled from "@emotion/styled"
 
 const Heading = styled.div`
-  font-size: 3em;
+  font-size: 3rem;
+  line-height: 3.5rem;
 `
 
 const ExperimentHeading = styled.div`
-  font-size: 1.5em;
+  font-size: 1.5rem;
+  line-height: 2rem;
 `
 
 const ExperimentDesc = styled.div`
-  font-size: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
 `
 
 export default ({ experimentsList }) => {
