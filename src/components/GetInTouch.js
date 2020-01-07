@@ -103,7 +103,7 @@ export default () => {
     e.preventDefault()
     try {
       await fetch(
-        "https://us-central1-portfolio-263920.cloudfunctions.net/contactme",
+        "https://us-central1-portfolio-263920.cloudfunctions.net/SendEmail",
         {
           method: "POST",
           body: JSON.stringify({ emailAddress: email, name, message }),
