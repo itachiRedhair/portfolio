@@ -191,6 +191,8 @@ export default () => {
                   return "Please Wait..."
                 case messageStatus.sent:
                   return "WILL GET BACK TO YOU SOON"
+                case messageStatus.failed:
+                  return "FAILED! MAYBE TRY AGAIN LATER"
                 default:
                   return "SUBMIT"
               }
