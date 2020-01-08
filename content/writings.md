@@ -9,5 +9,10 @@ writings:
   - heading: 'Alexa Skill with NodeJs, Part III : Rapid Development tools'
     link: >-
       https://medium.com/@akshay.milmile/alexa-skill-with-nodejs-part-iii-rapid-development-tools-f98294040431
+  - heading: >-
+      Build a serverless service for “Contact Me” form in Golang and deploy on
+      GCP
+    link: >-
+      https://medium.com/@akshay.milmile/build-a-serverless-service-for-contact-me-form-in-golang-and-deploy-on-gcp-475e53aa6364
 ---
 
