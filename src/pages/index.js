@@ -62,11 +62,11 @@ const IndexPage = ({ data }) => {
       _expts = aNode.frontmatter["experiments"]
         ? aNode.frontmatter["experiments"]
         : _expts
-      _stuffKnow = aNode.frontmatter["stuffIAmLearning"]
-        ? aNode.frontmatter["stuffIAmLearning"]
-        : _stuffKnow
-      _stuffLearning = aNode.frontmatter["stuffIKnow"]
+      _stuffKnow = aNode.frontmatter["stuffIKnow"]
         ? aNode.frontmatter["stuffIKnow"]
+        : _stuffKnow
+      _stuffLearning = aNode.frontmatter["stuffIAmLearning"]
+        ? aNode.frontmatter["stuffIAmLearning"]
         : _stuffLearning
       _work = aNode.frontmatter["work"] ? aNode.frontmatter["work"] : _work
       _writings = aNode.frontmatter["writings"]
