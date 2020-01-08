@@ -85,6 +85,7 @@ const ContactPlatformContainer = styled.div`
 const PlatfomrImgLink = styled.a`
   display: inline-block;
   background-image: none;
+  padding: 0em 1em 0em 1em;
 `
 
 const PlatformImg = styled.img`
@@ -175,16 +176,28 @@ export default () => {
         </SubmitButton>
       </form>
       <ContactPlatformContainer>
-        <PlatfomrImgLink href="https://twitter.com/_akshay_milmile" target="_blank">
+        <PlatfomrImgLink
+          href="https://twitter.com/_akshay_milmile"
+          target="_blank"
+        >
           <PlatformImg src={twitterIconImg} alt="twitter" />
         </PlatfomrImgLink>
-        <PlatfomrImgLink href="https://medium.com/@akshay.milmile" target="_blank">
+        <PlatfomrImgLink
+          href="https://medium.com/@akshay.milmile"
+          target="_blank"
+        >
           <PlatformImg src={mediumIconImg} alt="medium" />
         </PlatfomrImgLink>
-        <PlatfomrImgLink href="https://github.com/itachiredhair" target="_blank">
+        <PlatfomrImgLink
+          href="https://github.com/itachiredhair"
+          target="_blank"
+        >
           <PlatformImg src={githubIconImg} alt="github" />
         </PlatfomrImgLink>
-        <PlatfomrImgLink href="https://www.linkedin.com/in/akshaymilmile/" target="_blank">
+        <PlatfomrImgLink
+          href="https://www.linkedin.com/in/akshaymilmile/"
+          target="_blank"
+        >
           <PlatformImg src={linkedinIconImg} alt="linkedin" />
         </PlatfomrImgLink>
       </ContactPlatformContainer>

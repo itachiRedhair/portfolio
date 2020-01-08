@@ -3,8 +3,12 @@ import styled from "@emotion/styled"
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 650px;
-  padding: 0 1rem;
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
 `
 
 export default ({ children }) => <Container>{children}</Container>
