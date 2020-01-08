@@ -93,16 +93,21 @@ const PlatformImg = styled.img`
   margin-bottom: 0;
 `
 
+const messageStatus = { sending: "SENDING", sent: "SENT", notSent: "notSent" }
+
 export default () => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
   const [message, setMessage] = useState("")
-  const [messageSent, setMessageSent] = useState(false)
+  const [messageSendingStatus, setMessageSendingStatus] = useState(
+    messageStatus.notSent
+  )
   const [error, setError] = useState(null)
 
   const handleSubmit = async e => {
     e.preventDefault()
     try {
+      setMessageSendingStatus(messageStatus.sending)
       await fetch(
         "https://us-central1-portfolio-263920.cloudfunctions.net/SendEmail",
         {
@@ -110,15 +115,16 @@ export default () => {
           body: JSON.stringify({ emailAddress: email, name, message }),
         }
       )
-      setMessageSent(true)
+      setMessageSendingStatus(messageStatus.sent)
     } catch (error) {
       setError(error)
+      setMessageSendingStatus(messageStatus.notSent)
     }
   }
 
   const checkMessageSent = () => {
-    if (messageSent) {
-      setMessageSent(false)
+    if (messageSendingStatus !== messageStatus.notSent) {
+      setMessageSendingStatus(messageStatus.notSent)
     }
   }
 
@@ -168,9 +174,23 @@ export default () => {
             />
           </Label>
         </FormRow>
-        <SubmitButton type="submit" disabled={messageSent}>
+        <SubmitButton
+          type="submit"
+          disabled={messageSendingStatus !== messageStatus.notSent}
+        >
           <SubmitButtonText>
-            {messageSent ? "WILL GET BACK TO YOU SOON" : "SUBMIT"}
+            {(() => {
+              switch (messageSendingStatus) {
+                case messageStatus.notSent:
+                  return "SUBMIT"
+                case messageStatus.sending:
+                  return "Please Wait..."
+                case messageStatus.sent:
+                  return "WILL GET BACK TO YOU SOON"
+                default:
+                  return "SUBMIT"
+              }
+            })()}
           </SubmitButtonText>
           <ErrorText>{error}</ErrorText>
         </SubmitButton>
