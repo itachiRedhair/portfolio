@@ -192,7 +192,7 @@ export default () => {
                 case messageStatus.sent:
                   return "WILL GET BACK TO YOU SOON"
                 case messageStatus.failed:
-                  return "FAILED! MAYBE TRY AGAIN LATER"
+                  return "FAILED! YOU CAN STILL USE THIS 👇 OPTIONS"
                 default:
                   return "SUBMIT"
               }
