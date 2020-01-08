@@ -93,7 +93,12 @@ const PlatformImg = styled.img`
   margin-bottom: 0;
 `
 
-const messageStatus = { sending: "SENDING", sent: "SENT", notSent: "notSent" }
+const messageStatus = {
+  sending: "SENDING",
+  sent: "SENT",
+  notSent: "NOT_SENT",
+  failed: "FAILED",
+}
 
 export default () => {
   const [email, setEmail] = useState("")
@@ -102,7 +107,6 @@ export default () => {
   const [messageSendingStatus, setMessageSendingStatus] = useState(
     messageStatus.notSent
   )
-  const [error, setError] = useState(null)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -116,9 +120,9 @@ export default () => {
         }
       )
       setMessageSendingStatus(messageStatus.sent)
-    } catch (error) {
-      setError(error)
-      setMessageSendingStatus(messageStatus.notSent)
+    } catch (_error) {
+      console.log(_error)
+      setMessageSendingStatus(messageStatus.failed)
     }
   }
 
@@ -192,7 +196,6 @@ export default () => {
               }
             })()}
           </SubmitButtonText>
-          <ErrorText>{error}</ErrorText>
         </SubmitButton>
       </form>
       <ContactPlatformContainer>
