@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Portfolio`,
-    description: `My attempt at personal portfolio website. Hopefully this one makes it.`,
-    author: `Akshay M`,
+    description: `Portfolio Website`,
+    author: `Akshay Milmile`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -44,5 +44,11 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-122604442-3",
+      },
+    },
   ],
 }
