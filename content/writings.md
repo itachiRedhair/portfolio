@@ -13,6 +13,6 @@ writings:
       Build a serverless service for “Contact Me” form in Golang and deploy on
       GCP
     link: >-
-      https://medium.com/@akshay.milmile/build-a-serverless-service-for-contact-me-form-in-golang-and-deploy-on-gcp-475e53aa6364
+      https://dev.to/itachiredhair/build-a-serverless-service-for-contact-me-form-in-golang-and-deploy-on-gcp-3del
 ---
 
