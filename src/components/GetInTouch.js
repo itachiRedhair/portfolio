@@ -4,6 +4,7 @@ import twitterIconImg from "../images/twitter-icon.png"
 import githubIconImg from "../images/github-icon.png"
 import mediumIconImg from "../images/medium-icon.png"
 import linkedinIconImg from "../images/linkedin-icon.png"
+import devToIconImg from "../images/devto-icon.png"
 
 const Heading = styled.div`
   font-size: 3rem;
@@ -70,10 +71,6 @@ const SubmitButtonText = styled.span`
   }
 `
 
-const ErrorText = styled.span`
-  color: tomato;
-`
-
 const ContactPlatformContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -85,7 +82,7 @@ const ContactPlatformContainer = styled.div`
 const PlatfomrImgLink = styled.a`
   display: inline-block;
   background-image: none;
-  padding: 0em 1em 0em 1em;
+  padding: 0em 0.75em 0em 0.75em;
 `
 
 const PlatformImg = styled.img`
@@ -224,6 +221,9 @@ export default () => {
           target="_blank"
         >
           <PlatformImg src={linkedinIconImg} alt="linkedin" />
+        </PlatfomrImgLink>
+        <PlatfomrImgLink href="https://dev.to/itachiredhair" target="_blank">
+          <PlatformImg src={devToIconImg} alt="dev.to" />
         </PlatfomrImgLink>
       </ContactPlatformContainer>
     </div>
