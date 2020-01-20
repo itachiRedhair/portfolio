@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import arrowDownImg from "../images/arrow-down.png"
 
-const Page = styled.section`
+const Viewport = styled.section`
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
@@ -28,12 +28,12 @@ const ArrowImg = styled.img`
 
 export default ({ children, anchors, anchorIndex }) => {
   const handleArrowDownClick = () => {
-    const nextPageNode = document.getElementById(anchors[anchorIndex + 1])
-    nextPageNode.scrollIntoView({ behavior: "smooth" })
+    const nextViewportNode = document.getElementById(anchors[anchorIndex + 1])
+    nextViewportNode.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <Page id={anchors[anchorIndex]}>
+    <Viewport id={anchors[anchorIndex]}>
       <Container>{children}</Container>
       {anchors[anchorIndex + 1] && (
         <ArrowImg
@@ -42,6 +42,6 @@ export default ({ children, anchors, anchorIndex }) => {
           onClick={handleArrowDownClick}
         />
       )}
-    </Page>
+    </Viewport>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/SEO"
 import Layout from "../components/Layout"
-import Page from "../components/Page"
+import Viewport from "../components/Viewport"
 import Intro from "../components/Intro"
 import Work from "../components/Work"
 import Experiments from "../components/Experiments"
@@ -74,27 +74,27 @@ const IndexPage = ({ data }) => {
     <>
       <SEO title="Home" />
       <Layout>
-        <Page anchors={anchors} anchorIndex={0}>
+        <Viewport anchors={anchors} anchorIndex={0}>
           <Intro name={name} description={description} image={image} />
-        </Page>
-        <Page anchors={anchors} anchorIndex={1}>
+        </Viewport>
+        <Viewport anchors={anchors} anchorIndex={1}>
           <Work workDesc={work} />
-        </Page>
-        <Page anchors={anchors} anchorIndex={2}>
+        </Viewport>
+        <Viewport anchors={anchors} anchorIndex={2}>
           <StuffIKnow
             stuffIKnowList={stuffIKnow || []}
             stuffIAmLearningList={stuffIAmLearning || []}
           />
-        </Page>
-        <Page anchors={anchors} anchorIndex={3}>
+        </Viewport>
+        <Viewport anchors={anchors} anchorIndex={3}>
           <Experiments experimentsList={experiments || []} />
-        </Page>
-        <Page anchors={anchors} anchorIndex={4}>
+        </Viewport>
+        <Viewport anchors={anchors} anchorIndex={4}>
           <Writings writingsList={writings || []} />
-        </Page>
-        <Page anchors={anchors} anchorIndex={5}>
+        </Viewport>
+        <Viewport anchors={anchors} anchorIndex={5}>
           <GetInTouch />
-        </Page>
+        </Viewport>
       </Layout>
     </>
   )
