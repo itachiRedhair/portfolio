@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
     setStuffIAmLearning(_stuffLearning)
     setStuffIKnow(_stuffKnow)
     setWritings(_writings)
-  }, data)
+  }, [data])
 
   return (
     <>

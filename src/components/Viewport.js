@@ -4,7 +4,6 @@ import arrowDownImg from "../images/arrow-down.png"
 
 const Viewport = styled.section`
   height: 100vh;
-  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: center;
